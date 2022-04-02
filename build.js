@@ -4,6 +4,11 @@
  * 2. 如果 下面代码的  ForkTsCheckerWebpackPlugin.getCompilerHooks 存在，plugin 中不加 ForkTsCheckerWebpackPlugin --->   不报错 
  * 3. 如果 下面代码的  ForkTsCheckerWebpackPlugin.getCompilerHooks 注释，plugin 中加 ForkTsCheckerWebpackPlugin   --->   不报错  
  * 4. 如果  clientConfig 不是数组  --->  不会报错
+ * ----------------- English -------------------
+ * 1. If the following code is `forktscheckerwebpackplugin.Getcompilerhooks`  exists, Add forktscheckerwebpackplugin to plugin--> report errors
+ * 2. If the following code is `forktscheckerwebpackplugin.Getcompilerhooks`  exists, Forktscheckerwebpackplugin is not added to the plugin --> No error will be reported
+ * 3. If the following code is `forktscheckerwebpackplugin.Getcompilerhooks` annotation, Add forktscheckerwebpackplugin to plugin  --> No error will be reported
+ * 4. If clientconfig is not an array ---> No error will be reported
  * ***/
 
 const clientConfig = require("./webpack.config")
@@ -20,7 +25,7 @@ function compile(config) {
       process.exit(1);
     }
 
-    // 这块的 代码
+    // 这块的 代码 / This piece of code
     ForkTsCheckerWebpackPlugin
       .getCompilerHooks(compiler)
       .waiting.tap('awaitingTypeScriptCheck', () => {
