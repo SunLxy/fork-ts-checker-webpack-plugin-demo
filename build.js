@@ -1,8 +1,9 @@
 
-/** 问题，3种情况
+/** 问题，4种情况
  * 1. 如果 下面代码的  ForkTsCheckerWebpackPlugin.getCompilerHooks 存在，plugin 中加 ForkTsCheckerWebpackPlugin --->  报错 
  * 2. 如果 下面代码的  ForkTsCheckerWebpackPlugin.getCompilerHooks 存在，plugin 中不加 ForkTsCheckerWebpackPlugin --->   不报错 
  * 3. 如果 下面代码的  ForkTsCheckerWebpackPlugin.getCompilerHooks 注释，plugin 中加 ForkTsCheckerWebpackPlugin   --->   不报错  
+ * 4. 如果  clientConfig 不是数组  --->  不会报错
  * ***/
 
 const clientConfig = require("./webpack.config")
